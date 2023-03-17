@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patologiadetectada index{% endblock %}
+
+{% block body %}
+    <h1>Patologiadetectada index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Deacription</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for patologiadetectada in patologiadetectadas %}
+            <tr>
+                <td>{{ patologiadetectada.id }}</td>
+                <td>{{ patologiadetectada.name }}</td>
+                <td>{{ patologiadetectada.deacription }}</td>
+                <td>
+                    <a href="{{ path('app_patologiadetectada_show', {'id': patologiadetectada.id}) }}">show</a>
+                    <a href="{{ path('app_patologiadetectada_edit', {'id': patologiadetectada.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_patologiadetectada_new') }}">Create new</a>
+{% endblock %}

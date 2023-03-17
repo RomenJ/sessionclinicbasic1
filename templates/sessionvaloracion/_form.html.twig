@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+  
+
+                {{ form_row(form.fecha, {'label': 'Fecha de la sesión'}) }}
+                {{ form_row(form.medico) }}
+                {{ form_row(form.paciente) }}
+                 {{ form_row(form.patologia1) }}
+                 {{ form_row(form.patologia2) }}
+                 {{ form_row(form.patologia3) }}
+
+
+
+
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

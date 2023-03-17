@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sessionvaloracion{% endblock %}
+
+{% block body %}
+    <h1>Sessionvaloracion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sessionvaloracion.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ sessionvaloracion.fecha ? sessionvaloracion.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_sessionvaloracion_index') }}">back to list</a>
+
+    <a href="{{ path('app_sessionvaloracion_edit', {'id': sessionvaloracion.id}) }}">edit</a>
+
+    {{ include('sessionvaloracion/_delete_form.html.twig') }}
+{% endblock %}

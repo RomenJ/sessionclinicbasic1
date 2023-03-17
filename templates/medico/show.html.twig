@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medico{% endblock %}
+
+{% block body %}
+    <h1>Medico</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ medico.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ medico.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ medico.surname }}</td>
+            </tr>
+            <tr>
+                <th>Dateborn</th>
+                <td>{{ medico.dateborn ? medico.dateborn|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_medico_index') }}">back to list</a>
+
+    <a href="{{ path('app_medico_edit', {'id': medico.id}) }}">edit</a>
+
+    {{ include('medico/_delete_form.html.twig') }}
+{% endblock %}
